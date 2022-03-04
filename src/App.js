@@ -9,6 +9,7 @@ import Footer from './Footer';
 import Account from './Account';
 
 function App() {
+  console.log("mob",requests);
   const [selectedOption, setSelectedOption] = useState(requests.fetchTrending);
   return (
     <Router>
