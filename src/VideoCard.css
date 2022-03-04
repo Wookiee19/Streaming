@@ -6,6 +6,7 @@
     position: relative;
     transition: .2s ease;
     cursor: pointer;
+    z-index: 1;
 }
 .videoCard:hover{
     transform: scale(1.05);
@@ -40,7 +41,7 @@
     margin-bottom: 15px;
     letter-spacing: 1px;
 }
-.movie__info > a > .MuiSvgIcon-root{
+.movie__info >.App > a > .MuiSvgIcon-root{
     font-size: 90px;
     width: 70px;
     height: 70px;
@@ -51,7 +52,7 @@
     color: #087575;
     transition: all .3s;
 }
-.movie__info > a > .MuiSvgIcon-root:hover{
+.movie__info >  a > .MuiSvgIcon-root:hover{
     transform: scale(.90);
     color: #04e2e2;
     border: 3px solid #04e2e2;
