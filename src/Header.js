@@ -17,19 +17,19 @@ function Header({ setSelectedOption }) {
     return (
         <div className="header">
             <div className="header__icons">
-                {/* <Link to="/" style={decoration}>
+                <Link to="/" style={decoration}>
                     <div className="header__icon header__icon--active">
                         <HomeIcon/>  
                         <p>Home</p>
                     </div>
                 </Link>
-                <Link to="/" style={decoration}>
+                {/* <Link to="/" style={decoration}>
                     <div className="header__icon" onClick={() => setSelectedOption(requests.fetchPopularMovies)}>
                         <FlashOnIcon/> 
                         <p>Popular</p>
                     </div>
-                </Link>
-                <Link to="/" style={decoration}>
+                </Link> */}
+                {/* <Link to="/" style={decoration}>
                     <div className="header__icon" onClick={() => setSelectedOption(requests.fetchPopularShows)}>
                         <LiveTvIcon/>  
                         <p>TV Shows</p> 
