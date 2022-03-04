@@ -23,13 +23,13 @@ function Header({ setSelectedOption }) {
                         <p>Home</p>
                     </div>
                 </Link>
-                {/* <Link to="/" style={decoration}>
+                <Link to="/" style={decoration}>
                     <div className="header__icon" onClick={() => setSelectedOption(requests.fetchPopularMovies)}>
                         <FlashOnIcon/> 
                         <p>Popular</p>
                     </div>
-                </Link> */}
-                {/* <Link to="/" style={decoration}>
+                </Link>
+                <Link to="/" style={decoration}>
                     <div className="header__icon" onClick={() => setSelectedOption(requests.fetchPopularShows)}>
                         <LiveTvIcon/>  
                         <p>TV Shows</p> 
@@ -40,11 +40,11 @@ function Header({ setSelectedOption }) {
                         <PersonOutlineIcon/>
                         <p>Account</p>
                     </div>
-                </Link> */}
+                </Link>
                 <Search setSelectedOption={setSelectedOption}/>
             </div>
             <Link to="/">
-                <h1 className="logo">Cloven Entertainment</h1>
+                <h1 className="logo">hulo</h1>
             </Link>
         </div>
     )

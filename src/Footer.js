@@ -18,7 +18,7 @@ function Footer() {
         <div className="footer">
             <ArrowForwardIosIcon onClick={scrollToEnd}/>
             <ArrowForwardIosIcon className="to__top" onClick={scrollTop}/>
-            
+            Made with love by <a href="https://stefan-golban.netlify.app">Golban Stefan</a>
         </div>
     )
 }

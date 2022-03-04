@@ -31,15 +31,15 @@ function Nav({ setSelectedOption }) {
             <Link to="/" >
                 <h2 onClick={() => setSelectedOption(requests.fetchSciFi)}>SciFi</h2>
             </Link>
-            {/* <Link to="/" >
+            <Link to="/" >
                 <h2 onClick={() => setSelectedOption(requests.fetchWestern)}>Western</h2>
-            </Link> */}
+            </Link>
             <Link to="/" >
                 <h2 onClick={() => setSelectedOption(requests.fetchAnimation)}>Animation</h2>
             </Link>
             <Link to="/" >
                 <h2 onClick={() => setSelectedOption(requests.fetchTV)}>Movies</h2>
-            </Link> 
+            </Link>
             
         </div>
     )
