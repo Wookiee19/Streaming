@@ -18,24 +18,24 @@ function Header({ setSelectedOption }) {
         <div className="header">
             <div className="header__icons">
                 <Link to="/" style={decoration}>
-                    <div className="header__icon header__icon--active">
+                    <div className="header__icon header__icon--active"  onClick={() => setSelectedOption(requests.fetchTrending)}>
                         <HomeIcon/>  
                         <p>Home</p>
                     </div>
                 </Link>
-                {/* <Link to="/" style={decoration}>
+                <Link to="/" style={decoration}>
                     <div className="header__icon" onClick={() => setSelectedOption(requests.fetchPopularMovies)}>
                         <FlashOnIcon/> 
                         <p>Popular</p>
                     </div>
-                </Link> */}
-                {/* <Link to="/" style={decoration}>
+                </Link>
+                <Link to="/" style={decoration}>
                     <div className="header__icon" onClick={() => setSelectedOption(requests.fetchPopularShows)}>
                         <LiveTvIcon/>  
                         <p>TV Shows</p> 
                     </div>
                 </Link>
-                <Link to="/account" style={decoration}>
+                {/* <Link to="/account" style={decoration}>
                     <div className="header__icon">
                         <PersonOutlineIcon/>
                         <p>Account</p>
@@ -43,9 +43,9 @@ function Header({ setSelectedOption }) {
                 </Link> */}
                 <Search setSelectedOption={setSelectedOption}/>
             </div>
-            <Link to="/">
+            
                 <h1 className="logo">Cloven Entertainment</h1>
-            </Link>
+            
         </div>
     )
 }
