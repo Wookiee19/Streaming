@@ -27,10 +27,17 @@ const VideoCard = forwardRef(({ movieList, id }, ref) => {
     const [open, setOpen] = React.useState(false);
     const [scroll, setScroll] = React.useState('paper');
   
-    const handleClickOpen = (scrollType) => () => {
+    const handleClickOpen = (scrollType,mediatype) => () => {
+      if(mediatype=="movie")
+      {
       playTrailer();
       setOpen(true);
       setScroll(scrollType);
+      }
+      else{
+        setOpen(true);
+      setScroll(scrollType);
+      }
     };
   
     const handleClose = () => {
@@ -64,12 +71,14 @@ const VideoCard = forwardRef(({ movieList, id }, ref) => {
         .then(res => res.json())
         .then(data => {
                 setData(data);
+                console.log("YTkey111",data)
             })
             
     },[id])
     const playTrailer = () => {
         [data].map(el => 
-            setYTkey(el.results[0].key||null)
+          
+            setYTkey(el.results[0].key)
         )
         console.log("YTkey1",YTkey)
     }
@@ -84,19 +93,24 @@ const VideoCard = forwardRef(({ movieList, id }, ref) => {
                
                 <div className="App">
                 
-                <a> <PlayIcon onClick={handleClickOpen('paper')}/></a>
+                <a> <PlayIcon onClick={handleClickOpen('paper',movieList.media_type)}/></a>
                 
       
       <Dialog
         open={open}
         onClose={handleClose}
         scroll={scroll}
-        
+         PaperProps={{
+    style: {
+      backgroundImage: `linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12)`,
+     
+    },
+  }}
         aria-labelledby="scroll-dialog-title"
         aria-describedby="scroll-dialog-description"
       >
-        <DialogTitle id="scroll-dialog-title" className="name">{movieList.title || movieList.original_title || movieList.name || movieList.original_name}</DialogTitle>
-        <DialogContent dividers={scroll === 'paper'}>
+       <h1 className='title'> {movieList.title || movieList.original_title || movieList.name || movieList.original_name}</h1>
+        <DialogContent dividers={scroll === 'paper'} style={{ overflow: "hidden" }}>
           <DialogContentText
             id="scroll-dialog-description"
             ref={descriptionElementRef}

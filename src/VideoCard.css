@@ -1,20 +1,21 @@
 .videoCard {
     color: white;
-    width: 500px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
     margin: 10px;
     position: relative;
     transition: .2s ease;
     cursor: pointer;
     z-index: 1;
 }
-.name{
-    color: rgb(140, 0, 255);
-    
+.title{
+    margin-left: 1vw;
+    margin-top: 1vw;
 }
 .name1{
     margin-top: 2px;
 }
+
 .videoCard:hover{
     transform: scale(1.05);
     transition: .2s ease;
