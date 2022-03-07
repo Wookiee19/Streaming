@@ -117,19 +117,20 @@ const VideoCard = forwardRef(({ movieList, id }, ref) => {
             tabIndex={-1}
           >
             <p className="name1">{movieList.overview}</p>
-            <p className="name1">Type: {movieList.media_type}</p>
+            <p className="name1"> <b>Type: </b> {movieList.media_type}</p>
             {/* <p className="name1">Language: {movieList.original_language}</p> */}
-            <p className="name1">Rating: {movieList.vote_average}<StarIcon style={{color: "orange"}}/></p>
+            <p className="name1"> <b>Rating: </b> {movieList.vote_average}<StarIcon style={{color: "orange"}}/></p>
+            
             {/* <p >Adult: {movieList.adult}</p> */}
             {/* <p className="name1">Genre: {movieList.genre_ids}</p> */}
-            <p className="name1">OTT Platform</p>
+            <p className="name1"> <b>OTT Platform: </b></p>
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Amazon_Prime_Logo.svg/120px-Amazon_Prime_Logo.svg.png" width="36" height="36" alt="Now Streaming on Amazon Prime Video"/>
-            <img src=" https://seeklogo.com/images/H/hotstar-logo-6A3E165CC3-seeklogo.com.png"  width="36" height="36" alt="Now Streaming on Amazon Prime Video"/>
-            <img src="https://cdn.freelogovectors.net/wp-content/uploads/2021/12/sonyliv-logo-freelogovectors.net_.png" width="36" height="36" alt="Now Streaming on Amazon Prime Video"/>
+           <img src=" https://seeklogo.com/images/H/hotstar-logo-6A3E165CC3-seeklogo.com.png"  width="36" height="36" alt="Now Streaming on Amazon Prime Video"/>
+           <br/> <img src="https://cdn.freelogovectors.net/wp-content/uploads/2021/12/sonyliv-logo-freelogovectors.net_.png" width="36" height="36" alt="Now Streaming on Amazon Prime Video"/>
             <img src="https://cdn.vox-cdn.com/thumbor/Yq1Vd39jCBGpTUKHUhEx5FfxvmM=/39x0:3111x2048/1200x800/filters:focal(39x0:3111x2048)/cdn.vox-cdn.com/uploads/chorus_image/image/49901753/netflixlogo.0.0.png" width="36" height="36" alt="Now Streaming on Amazon Prime Video"/>
-            <p className="name1">Movie Tickets </p>
+            <p className="name1"> <b>Movie Tickets: </b> </p>
             <img src="https://pbs.twimg.com/profile_images/1084718695836987392/pT8dY4C-_400x400.jpg" width="36" height="36" alt="Now Streaming on Amazon Prime Video"/>
-            <p className="name1">Offers </p>
+            <p className="name1"> <b>Offers: </b> </p>
             <img src="https://officechai.com/wp-content/uploads/2015/06/Screen-Shot-2015-06-25-at-6.51.25-PM.png" width="56" height="36" alt="Now Streaming on Amazon Prime Video"/>
               
                 
