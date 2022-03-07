@@ -28,6 +28,7 @@ const VideoCard = forwardRef(({ movieList, id }, ref) => {
     const [scroll, setScroll] = React.useState('paper');
   
     const handleClickOpen = (scrollType) => () => {
+      playTrailer();
       setOpen(true);
       setScroll(scrollType);
     };
@@ -68,9 +69,9 @@ const VideoCard = forwardRef(({ movieList, id }, ref) => {
     },[id])
     const playTrailer = () => {
         [data].map(el => 
-            setYTkey(el.results[0].key)
+            setYTkey(el.results[0].key||null)
         )
-        console.log("aa",YTkey)
+        console.log("YTkey1",YTkey)
     }
     
  
@@ -82,6 +83,7 @@ const VideoCard = forwardRef(({ movieList, id }, ref) => {
             <div className="movie__info">
                
                 <div className="App">
+                
                 <a> <PlayIcon onClick={handleClickOpen('paper')}/></a>
                 
       
@@ -89,31 +91,42 @@ const VideoCard = forwardRef(({ movieList, id }, ref) => {
         open={open}
         onClose={handleClose}
         scroll={scroll}
+        
         aria-labelledby="scroll-dialog-title"
         aria-describedby="scroll-dialog-description"
       >
-        <DialogTitle id="scroll-dialog-title">{movieList.title || movieList.original_title || movieList.name || movieList.original_name}</DialogTitle>
+        <DialogTitle id="scroll-dialog-title" className="name">{movieList.title || movieList.original_title || movieList.name || movieList.original_name}</DialogTitle>
         <DialogContent dividers={scroll === 'paper'}>
           <DialogContentText
             id="scroll-dialog-description"
             ref={descriptionElementRef}
             tabIndex={-1}
           >
-            <p >{movieList.overview}</p>
-            <p >Type: {movieList.media_type}</p>
-            <p >Language: {movieList.original_language}</p>
+            <p className="name1">{movieList.overview}</p>
+            <p className="name1">Type: {movieList.media_type}</p>
+            {/* <p className="name1">Language: {movieList.original_language}</p> */}
+            <p className="name1">Rating: {movieList.vote_average}<StarIcon style={{color: "orange"}}/></p>
             {/* <p >Adult: {movieList.adult}</p> */}
-            <p >Genre: {movieList.genre_ids}</p>
-            <p >OTT:</p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Amazon_Prime_Logo.svg/120px-Amazon_Prime_Logo.svg.pngS" width="36" height="36" alt="Now Streaming on Amazon Prime Video"/>
-            
-            
+            {/* <p className="name1">Genre: {movieList.genre_ids}</p> */}
+            <p className="name1">OTT Platform</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Amazon_Prime_Logo.svg/120px-Amazon_Prime_Logo.svg.png" width="36" height="36" alt="Now Streaming on Amazon Prime Video"/>
+            <img src=" https://seeklogo.com/images/H/hotstar-logo-6A3E165CC3-seeklogo.com.png"  width="36" height="36" alt="Now Streaming on Amazon Prime Video"/>
+            <img src="https://cdn.freelogovectors.net/wp-content/uploads/2021/12/sonyliv-logo-freelogovectors.net_.png" width="36" height="36" alt="Now Streaming on Amazon Prime Video"/>
+            <img src="https://cdn.vox-cdn.com/thumbor/Yq1Vd39jCBGpTUKHUhEx5FfxvmM=/39x0:3111x2048/1200x800/filters:focal(39x0:3111x2048)/cdn.vox-cdn.com/uploads/chorus_image/image/49901753/netflixlogo.0.0.png" width="36" height="36" alt="Now Streaming on Amazon Prime Video"/>
+            <p className="name1">Movie Tickets </p>
+            <img src="https://pbs.twimg.com/profile_images/1084718695836987392/pT8dY4C-_400x400.jpg" width="36" height="36" alt="Now Streaming on Amazon Prime Video"/>
+            <p className="name1">Offers </p>
+            <img src="https://officechai.com/wp-content/uploads/2015/06/Screen-Shot-2015-06-25-at-6.51.25-PM.png" width="56" height="36" alt="Now Streaming on Amazon Prime Video"/>
+              
+                
+                
                   <iframe
                     className="modal__video-style"
                     onLoad={spinner}
                     loading="lazy"
                     width="550"
                     height="400"
-                    src={`https://www.youtube.com/embed/mqqft2x_Aa4`}
+                    src={`https://www.youtube.com/embed/${YTkey}`}
                     title="YouTube video player"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -139,6 +152,7 @@ const VideoCard = forwardRef(({ movieList, id }, ref) => {
         
                { console.log("111",movieList)}
                 <div className="movie__details">
+                  
                     <h2>{movieList.title || movieList.original_title || movieList.name || movieList.original_name}</h2>
                     <p className="movie__summary">{movieList.overview}</p>
                     <p>Release Date {movieList.release_date}</p>
