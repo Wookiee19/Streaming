@@ -2,6 +2,9 @@
     font-family: myFirstFont;
     src: url(Groovy\ Fast.ttf);
  }
+ .logo1{
+    display:none;
+    }
 .header{
     color: white;
     display: flex;
@@ -21,6 +24,7 @@
     display: flex;
     align-items: center;
     text-align: center;
+   
 }
 .header__icon{
     display: flex;
@@ -57,8 +61,28 @@ a{
     letter-spacing: 5px;
     margin: 0 20px;
 }
+.logo{
+    margin-right: 3vw;
+
+}
+
 @media screen and (max-width: 768px) {
     .header{
         padding: 10px;
+    }
+    .logo{
+       display: none;
+    
+    }
+    .logo1{
+        display: flex;
+    flex-direction: column-reverse;
+    }
+    .header__icon{
+        display:none;
+
+    }
+    .search__icon{
+        margin-left: 15px;
     }
 }

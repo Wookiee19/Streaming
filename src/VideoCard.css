@@ -3,6 +3,7 @@
     width: 400px;
     height: 400px;
     margin: 10px;
+    
     position: relative;
     transition: .2s ease;
     cursor: pointer;

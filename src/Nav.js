@@ -25,9 +25,7 @@ function Nav({ setSelectedOption }) {
             <Link to="/" >
                 <h2 onClick={() => setSelectedOption(requests.fetchRomanceMovies)}>Romance</h2>
             </Link>
-            <Link to="/" >
-                <h2 onClick={() => setSelectedOption(requests.fetchMystery)}>Mystery</h2>
-            </Link>
+           
             <Link to="/" >
                 <h2 onClick={() => setSelectedOption(requests.fetchSciFi)}>SciFi</h2>
             </Link>

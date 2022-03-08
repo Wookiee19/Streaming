@@ -1,5 +1,6 @@
 .search__form{
     display: flex;
+    margin-left: 2px;
 }
 .search__container{
     display: flex;

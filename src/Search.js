@@ -9,7 +9,7 @@ const Search = ({ setSelectedOption }) => {
     const animationOn = {
         opacity: "1",
         visibility: "visible",
-        width: "250px",
+        width: "120px",
     }
     const animationOff = {
         width: "0",

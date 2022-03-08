@@ -17,6 +17,7 @@ function Header({ setSelectedOption }) {
     return (
         <div className="header">
             <div className="header__icons">
+            <h3 className="logo1">Cloven Entertainment</h3>
                 <Link to="/" style={decoration}>
                     <div className="header__icon header__icon--active"  onClick={() => setSelectedOption(requests.fetchTrending)}>
                         <HomeIcon/>  
@@ -41,10 +42,11 @@ function Header({ setSelectedOption }) {
                         <p>Account</p>
                     </div>
                 </Link> */}
-                <Search setSelectedOption={setSelectedOption}/>
+                <Search className="search__icon" setSelectedOption={setSelectedOption}/>
             </div>
             
                 <h1 className="logo">Cloven Entertainment</h1>
+                
             
         </div>
     )
